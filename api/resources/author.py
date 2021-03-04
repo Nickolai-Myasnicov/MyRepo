@@ -11,7 +11,8 @@ class AuthorResource(Resource):
 
         author = AuthorModel.query.get(author_id)
         if author:
-            return f"Author id={author_id} not found", 404
+            return author.to_dict(), 200
+            #f"Author id={author_id} not found", 404
 
         return author.to_dict(), 200
 
